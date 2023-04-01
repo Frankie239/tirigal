@@ -8,7 +8,7 @@ int main()
     float primerValor = 0;
     float segundoValor = 0;
     float resultado = 0;
-    
+
     // pedimos el ingreso de los datos.
     cout << "Por favor ingrese el primer valor: " << endl;
     cin >> primerValor;
