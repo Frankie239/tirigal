@@ -33,7 +33,7 @@ Las variables booleanas se utilizan para guardar estados true o false. la idea d
 Ejercicios
 
 
-1- ¿Qué es lo que se visualiza por cada línea del siguiente código? Explicar cada resultado.
+1 - ¿Qué es lo que se visualiza por cada línea del siguiente código? Explicar cada resultado.
 
 cout << "Siete dividido tres es " << 7 / 3 << endl;<br>
 el resultado es 2. Ya que estamos haciendo una division de int/int
@@ -44,7 +44,7 @@ El resultado es 2.33333. Ya que estamos haciendo una division de un float sobre 
 cout << "Siete dividido tres es " << 7.0 / 3.0 << endl;<br>
 El resultado seria 2.33333. Ya que Es una division float/float
 
-2- Escribir un programa que le pida al usuario que ingrese dos valores (puntajes por ejemplo) y devuelva en pantalla el promedio.<br>
+2 - Escribir un programa que le pida al usuario que ingrese dos valores (puntajes por ejemplo) y devuelva en pantalla el promedio.<br>
 [Solucion](main.cpp)
 
 ``` CPP
@@ -82,17 +82,13 @@ int main()
 ```
 
 
-3- Escribir los valores que va teniendo la variable x luego de las siguientes operaciones. Luego verificar haciendo el programa:
+3 - Escribir los valores que va teniendo la variable x luego de las siguientes operaciones. Luego verificar haciendo el programa:
 
 
 Sentencias
-Respuesta
-int x = 4; x += 4;
-X es 8
-int x = 9; x -= 2;
-X es 7
-int x = 900; x /= 2;
-X es 450
-int x = 50; x *= 2;
-X es 100
+Respuesta<br>
+int x = 4; x += 4; x es 8<br>
+int x = 9; x -= 2; x es 7<br>
+int x = 900; x /= 2; x es 450<br>
+int x = 50; x *= 2; x es 100 <br>
 
