@@ -79,7 +79,7 @@ int main()
    cout << "El resultado es: "<< resultado << endl;
    return 0;
 }
-    ```
+```
 
 
 3- Escribir los valores que va teniendo la variable x luego de las siguientes operaciones. Luego verificar haciendo el programa:
