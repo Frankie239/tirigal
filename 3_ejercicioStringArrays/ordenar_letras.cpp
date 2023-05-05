@@ -43,8 +43,9 @@ int main()
 
   // La ayuda para adivinar la palabra está en la posición fila
   // 'eleccion' y columna 1 [ AYUDA ].
+ 
   string laAyuda = PALABRAS[ eleccion ][ AYUDA ];
-
+ //hola como estas
   // Guardamos la palabra que luego vamos a desordenar.
   string palabraDesordenada = laPalabra;
 
@@ -74,6 +75,7 @@ int main()
   cout << "Descubre la palabra formada por las letras desordenadas.\n";
   cout << "Escribe 'ayuda' para obtener una pista.\n";
   cout << "Escribe 'salir' para salir del juego.\n\n";
+  cout << "testing para Julian";
   cout << "La palabra desordenada es: " << palabraDesordenada << endl;
 
   string solucion;
