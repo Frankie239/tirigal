@@ -129,14 +129,6 @@ ONMW00OX0000K00O00KOOOO000K0OOO0K0ddoNXXKXXKK0NOkKNNN0K00K000O0K0KKKKKXKK0K0K00K
                                                                                  ......                                 
 )";
 #pragma endregion
-    // enum con los personajes para tenerlos organizados.
-    enum personajes
-    {
-        Howard = 1,
-        Lucien,
-        Lydia,
-        Faye,
-    };
 
     enum objetos
     {
@@ -145,7 +137,6 @@ ONMW00OX0000K00O00KOOOO000K0OOO0K0ddoNXXKXXKK0NOkKNNN0K00K000O0K0KKKKKXKK0K0K00K
         Estatuilla
     };
 
-    int personaje = 0;
     int decision = 0;
     bool correcto = false;
     bool utilizado = false;
@@ -163,139 +154,121 @@ ONMW00OX0000K00O00KOOOO000K0OOO0K0ddoNXXKXXKK0NOkKNNN0K00K000O0K0KKKKKXKK0K0K00K
     uniform_real_distribution<float> tiradaAtaque(0.0f, 1.0f);
 
     cout << "Bienvenido a la aventura conversacional de la tragedia en el albergue" << endl;
-    cout << "Howard" << endl;
-    cout << "Lucien" << endl;
-    cout << "Lydia" << endl;
-    cout << "Faye" << endl;
+    //todo: Add title and a logo
 
-    cin >> personaje;
-
-    switch (personaje)
-    {
-    case Howard:
-        system("clear");
-        cout << R"(El aire en la pensión de Ma Shanks estaba enrarecido por la preocupación. La habitación del señor Gardiner había estado cerrada durante varios días, y nadie había visto ni oído nada de él desde entonces. Todos los inquilinos estaban inquietos, pero para ti, la situación era especialmente preocupante. Habías prestado unos libros al señor Gardiner que necesitabas recuperar, ya que tenías un comprador muy interesado en ellos.
+    system("clear");
+    cout << R"(El aire en la pensión de Ma Shanks estaba enrarecido por la preocupación. La habitación del señor Gardiner había estado cerrada durante varios días, y nadie había visto ni oído nada de él desde entonces. Todos los inquilinos estaban inquietos, pero para ti, la situación era especialmente preocupante. Habías prestado unos libros al señor Gardiner que necesitabas recuperar, ya que tenías un comprador muy interesado en ellos.
 
 Finalmente, no pudiste soportar la incertidumbre y decidiste entrar a la habitación. Al abrir la puerta, el fuerte olor a podredumbre te golpeó en la cara. La habitación estaba en penumbra y parecía que no había signos de lucha, pero cuando te acercaste al centro de la habitación, tu corazón se detuvo. Allí estaba el cadáver del señor Gardiner, tirado en el suelo sobre una lona, con terribles lastimaduras en forma de espiral que cubrían todo su cuerpo. 
 
 Tu mente empezó a imaginar las peores posibilidades. ¿Qué había pasado en esa habitación? ¿Quién había hecho esto al pobre señor Gardiner? ¿Y por qué?.
 
 Junto a ti se encontraba Faye, tu compañera de pensión. Ella estaba igualmente horrorizada ante la escena que se presentaba ante sus ojos, y te agarró del brazo para sostenerse. En la penumbra de la habitación, podías ver que su rostro estaba pálido y sus manos temblaban. Te preguntaste si habías tomado la decisión correcta al entrar en esa habitación. Pero ya era demasiado tarde para retroceder)"
-             << endl;
+         << endl;
+    cout << "presiona enter para continar" << endl;
+    cin.ignore().get();
+    cout << "\nEntras a la habitacion, que te gustaria ir a investigar?" << endl;
+    cout << "1. Biblioteca" << endl;
+    cout << "2. Escritorio" << endl;
+    cin >> decision;
+    if (decision == 1)
+    {
+        cout << "Te acercas a la biblioteca..." << endl;
         cout << "presiona enter para continar" << endl;
         cin.ignore().get();
-        cout << "\nEntras a la habitacion, que te gustaria ir a investigar?" << endl;
-        cout << "1. Biblioteca" << endl;
-        cout << "2. Escritorio" << endl;
-        cin >> decision;
-        if (decision == 1)
-        {
-            cout << "Te acercas a la biblioteca..." << endl;
-            cout << "presiona enter para continar" << endl;
-            cin.ignore().get();
-        }
-        else if (decision == 2)
-        {
-            cout << "No ves nada relevante en el escritorio, pero faye se acerca y revisa energicamente una pila de sobres a tu lado. Decides ir a la biblioteca para dejarla sola. " << endl;
-            cout << "Decides acercarte a la ornamentada biblioteca para ver si encuentras ahi tus libros." << endl;
-            cout << "\nPresiona enter para continar" << endl;
-            cin.ignore().get();
-        }
-        system("clear");
-        cout << R"(El mueble de la biblioteca era una impresionante pieza de madera oscura, tallada con intrincados detalles y adornos. En la parte superior del mueble, se encontraban varias repisas, cada una abarrotada de libros de diferentes tamaños y colores.
+    }
+    else if (decision == 2)
+    {
+        cout << "No ves nada relevante en el escritorio, pero faye se acerca y revisa energicamente una pila de sobres a tu lado. Decides ir a la biblioteca para dejarla sola. " << endl;
+        cout << "Decides acercarte a la ornamentada biblioteca para ver si encuentras ahi tus libros." << endl;
+        cout << "\nPresiona enter para continar" << endl;
+        cin.ignore().get();
+    }
+    system("clear");
+    cout << R"(El mueble de la biblioteca era una impresionante pieza de madera oscura, tallada con intrincados detalles y adornos. En la parte superior del mueble, se encontraban varias repisas, cada una abarrotada de libros de diferentes tamaños y colores.
 
 Pero lo que más llamaba la atención del mueble era la puerta central de la vitrina, la cual estaba decorada con dos querubines tallados en relieve, uno a cada lado. Los querubines eran de tamaño real y parecían estar esculpidos con una precisión y detalle increíble.
 
 Cada querubín tenía sus alas extendidas, como si estuvieran a punto de emprender el vuelo, y sus ojos miraban hacia el interior de la vitrina con una expresión curiosa y un poco misteriosa. No pudiste evitar sentir que los querubines te estaban observando, como si supieran más de lo que estaban dispuestos a revelar.
 
 Te das cuenta que los dos querubines no estan del todo simetricos, sino que el derecho, esta levemente mas inclinado hacia arriba.)"
-             << endl;
-        while (!correcto)
+         << endl;
+    while (!correcto)
+    {
+        cout << "Que decides hacer?" << endl;
+        cout << "1. Abrir la biblioteca en busca de tus libros" << endl;
+        cout << "2. Revisar mas de cerca los dos querubines" << endl;
+
+        cin >> decision;
+
+        if (decision == 1)
         {
-            cout << "Que decides hacer?" << endl;
-            cout << "1. Abrir la biblioteca en busca de tus libros" << endl;
-            cout << "2. Revisar mas de cerca los dos querubines" << endl;
-
-            cin >> decision;
-
-            if (decision == 1)
-            {
-                system("clear");
-                cout << R"( Te adentras en la biblioteca del señor Gardiner, buscando con determinación los libros que había prestado y que necesitabas recuperar. Sin embargo, a medida que recorrias los estantes de madera oscura, fuiste notando que los títulos que encontrabas eran completamente distintos a los que habías venido a buscar. En lugar de encontrar los libros que habías prestado, tropezaste con tomos antiguos y polvorientos que hablaban de ocultismo y misterios prohibidos.
+            system("clear");
+            cout << R"( Te adentras en la biblioteca del señor Gardiner, buscando con determinación los libros que había prestado y que necesitabas recuperar. Sin embargo, a medida que recorrias los estantes de madera oscura, fuiste notando que los títulos que encontrabas eran completamente distintos a los que habías venido a buscar. En lugar de encontrar los libros que habías prestado, tropezaste con tomos antiguos y polvorientos que hablaban de ocultismo y misterios prohibidos.
 
 Al principio, te sentiste desconcertado y un poco perturbado por los títulos de los libros que estaba viendo, ya que muchos de ellos parecían tratar temas inquietantes como la invocación de espíritus, la alquimia y la brujería. )"
-                     << endl;
-                cout << "\nPresiona enter para continuar..." << endl;
-                cin.ignore().get();
-            }
-            else if (decision == 2)
-            {
-                system("clear");
-                cout << R"(Intrigado, empujas suavemente el querubín hacia la izquierda y, para tu sorpresa, sientes que se abría un pequeño cajón escondido detrás de él.
+                 << endl;
+            cout << "\nPresiona enter para continuar..." << endl;
+            cin.ignore().get();
+        }
+        else if (decision == 2)
+        {
+            system("clear");
+            cout << R"(Intrigado, empujas suavemente el querubín hacia la izquierda y, para tu sorpresa, sientes que se abría un pequeño cajón escondido detrás de él.
 
 El cajón estaba perfectamente camuflado en el mueble, y te preguntaste cuántas veces habría pasado por alto esa pequeña abertura. Con un poco de esfuerzo, logras sacar el cajón de su escondite y lo abres cuidadosamente.
 
 Dentro del cajón encontraste varios objetos extraños )"
-                     << endl;
+                 << endl;
 
-                cout << "\nPresiona enter para continuar..." << endl;
-                cin.ignore().get();
-                cout << "Al abrirse el cajon, te das cuenta que hay 3 objetos." << endl;
-                cout << "1. Una daga \n2. Un libro en un idioma que no conoces \n3. Una estatuilla humanoide" << endl;
+            cout << "\nPresiona enter para continuar..." << endl;
+            cin.ignore().get();
+            cout << "Al abrirse el cajon, te das cuenta que hay 3 objetos." << endl;
+            cout << "1. Una daga \n2. Un libro en un idioma que no conoces \n3. Una estatuilla humanoide" << endl;
 
-                correcto = true;
-                cin >> decision;
+            correcto = true;
+            cin >> decision;
 
-                switch (decision)
-                {
-                case Daga:
-                    cout << DAGA << endl;
-                    cout << "\nPresiona enter para continuar..." << endl;
-                    cin.ignore().get();
-                    cout << R"(Con tu mano temblorosa, agarras la daga hecha de un metal oscuro y desconocido. Al sostenerla, sientes una extraña energía emanando del arma, una energía que parecía provenir de un lugar más allá de la comprensión humana. La hoja estaba afilada como una navaja, y la empuñadura estaba tallada en una forma extraña y siniestra.)" << endl;
-                    objetoElegido = Daga;
-                    break;
-                case Libro:
-                    cout << LIBRO << endl;
-                    cout << "\nPresiona enter para continuar..." << endl;
-
-                    cin.ignore().get();
-                    cout << "Agarras el libro con dos manos, ves que el mismo esta en un idioma que no comprendes realmente, pero sientes una fuerte energia emanar del mismo." << endl;
-                    cout << "\nPresiona enter para continuar..." << endl;
-                    cin.ignore().get();
-                    objetoElegido = Libro;
-                    break;
-                case Estatuilla:
-                    cout << ESTATUILLA << endl;
-                    cout << "\nPresiona enter para continuar..." << endl;
-
-                    cin.ignore().get();
-                    cout << "La estatuilla";
-                    objetoElegido = Estatuilla;
-                    break;
-                }
-
-                cout << "No sabes para que es o que lo que es, pero si sabes que sera mas importante mas adelante. Lo agarras" << endl;
-                cout << "\nPresiona enter para continuar..." << endl;
-
-                cin.ignore().get();
-            }
-            else
+            switch (decision)
             {
-                cout << "No conozco ese caracter para este caso, diculpame!";
+            case Daga:
+                cout << DAGA << endl;
+                cout << "\nPresiona enter para continuar..." << endl;
+                cin.ignore().get();
+                cout << R"(Con tu mano temblorosa, agarras la daga hecha de un metal oscuro y desconocido. Al sostenerla, sientes una extraña energía emanando del arma, una energía que parecía provenir de un lugar más allá de la comprensión humana. La hoja estaba afilada como una navaja, y la empuñadura estaba tallada en una forma extraña y siniestra.)" << endl;
+                objetoElegido = Daga;
+                break;
+            case Libro:
+                cout << LIBRO << endl;
+                cout << "\nPresiona enter para continuar..." << endl;
+
+                cin.ignore().get();
+                cout << "Agarras el libro con dos manos, ves que el mismo esta en un idioma que no comprendes realmente, pero sientes una fuerte energia emanar del mismo." << endl;
+                cout << "\nPresiona enter para continuar..." << endl;
+                cin.ignore().get();
+                objetoElegido = Libro;
+                break;
+            case Estatuilla:
+                cout << ESTATUILLA << endl;
+                cout << "\nPresiona enter para continuar..." << endl;
+
+                cin.ignore().get();
+                cout << "La estatuilla";
+                objetoElegido = Estatuilla;
+                break;
             }
+
+            cout << "No sabes para que es o que lo que es, pero si sabes que sera mas importante mas adelante. Lo agarras" << endl;
+            cout << "\nPresiona enter para continuar..." << endl;
+
+            cin.ignore().get();
         }
-        break;
-    case Lucien:
-        cout << "Continuar";
-        break;
-    case Lydia:
-        cout << "Continuar";
-        break;
-    case Faye:
-        cout << "Continuar";
-        break;
+        else
+        {
+            cout << "No conozco ese caracter para este caso, diculpame!";
+        }
     }
+
     system("clear");
     cout << "Escuchas un ahullido viniendo de tus espaldas, se te eriza la piel al recordar que estas solamente con Gardiner y Faye en la habitacion. Te das vuelta y..." << endl;
 
@@ -404,16 +377,17 @@ Finalmente, con un rápido movimiento, lograste empujar a Gardiner hacia atrás,
 )" << endl;
         cout << "presiona enter para continar" << endl;
         cin.ignore().get();
-        if(vidasContrincante <= 0){
+        if (vidasContrincante <= 0)
+        {
             cout << R"(En un momento de desesperación, te aferraste a la ventana y empujaste a Gardiner con todas tus fuerzas, sintiendo cómo se soltaba de tus manos y caía hacia el suelo de abajo. Te quedaste allí mirando hacia abajo mientras el cuerpo de Gardiner, o lo que quedaba de el, se estrellaba contra el pavimento con un ruido sordo y seco.)" << endl;
         }
-        else if(vidasPersonaje <= 0){
+        else if (vidasPersonaje <= 0)
+        {
             cout << R"(En un momento de desesperación, intentaste aferrarte a la ventana para evitar la caída, pero Gardiner te empujó con todas sus fuerzas. Te sentiste caer por el aire, sin control sobre tu cuerpo, y con la sensación de que la muerte se acercaba rápidamente. Mientras caías, viste a Gardiner mirándote desde arriba, con una sonrisa siniestra en su rostro. Finalmente, sentiste el impacto contra el suelo con un fuerte golpe y todo se volvió oscuro.)" << endl;
         }
 
         cout << "\nFin de la aventura conversacional" << endl;
         cin.ignore().get();
-
     }
 
     return 0;
