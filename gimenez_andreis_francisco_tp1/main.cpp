@@ -5,6 +5,14 @@ using namespace std;
 int main()
 {
 #pragma region ASCII ART
+    const string LOGO = R"(  ____  _____  ___ _________ ____   ____ ______  ___         ___ ____       _      ____         __  ____  _____ ____ 
+ /    |/ ___/ /  _] ___/    |    \ /    |      |/   \       /  _]    \     | |    /    |       /  ]/    |/ ___//    |
+|  o  (   \_ /  [(   \_ |  ||  _  |  o  |      |     |     /  [_|  _  |    | |   |  o  |      /  /|  o  (   \_|  o  |
+|     |\__  |    _]__  ||  ||  |  |     |_|  |_|  O  |    |    _]  |  |    | |___|     |     /  / |     |\__  |     |
+|  _  |/  \ |   [_/  \ ||  ||  |  |  _  | |  | |     |    |   [_|  |  |    |     |  _  |    /   \_|  _  |/  \ |  _  |
+|  |  |\    |     \    ||  ||  |  |  |  | |  | |     |    |     |  |  |    |     |  |  |    \     |  |  |\    |  |  |
+|__|__| \___|_____|\___|____|__|__|__|__| |__|  \___/     |_____|__|__|    |_____|__|__|     \____|__|__| \___|__|__|
+                                                                                                                     )";
     const string ESTATUILLA = R"(OXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 KMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
 KMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
@@ -153,8 +161,9 @@ ONMW00OX0000K00O00KOOOO000K0OOO0K0ddoNXXKXXKK0NOkKNNN0K00K000O0K0KKKKKXKK0K0K00K
 
     uniform_real_distribution<float> tiradaAtaque(0.0f, 1.0f);
 
-    cout << "Bienvenido a la aventura conversacional de la tragedia en el albergue" << endl;
-    //todo: Add title and a logo
+    cout << LOGO << endl;
+    cout << "Bienvenido a la aventura conversacional de la tragedia en el albergue";
+    cin.ignore().get();
 
     system("clear");
     cout << R"(El aire en la pensión de Ma Shanks estaba enrarecido por la preocupación. La habitación del señor Gardiner había estado cerrada durante varios días, y nadie había visto ni oído nada de él desde entonces. Todos los inquilinos estaban inquietos, pero para ti, la situación era especialmente preocupante. Habías prestado unos libros al señor Gardiner que necesitabas recuperar, ya que tenías un comprador muy interesado en ellos.
@@ -377,13 +386,17 @@ Finalmente, con un rápido movimiento, lograste empujar a Gardiner hacia atrás,
 )" << endl;
         cout << "presiona enter para continar" << endl;
         cin.ignore().get();
-        if (vidasContrincante <= 0)
+
+        if (vidasContrincante <= 0 || vidasPersonaje <= 0)
         {
-            cout << R"(En un momento de desesperación, te aferraste a la ventana y empujaste a Gardiner con todas tus fuerzas, sintiendo cómo se soltaba de tus manos y caía hacia el suelo de abajo. Te quedaste allí mirando hacia abajo mientras el cuerpo de Gardiner, o lo que quedaba de el, se estrellaba contra el pavimento con un ruido sordo y seco.)" << endl;
-        }
-        else if (vidasPersonaje <= 0)
-        {
-            cout << R"(En un momento de desesperación, intentaste aferrarte a la ventana para evitar la caída, pero Gardiner te empujó con todas sus fuerzas. Te sentiste caer por el aire, sin control sobre tu cuerpo, y con la sensación de que la muerte se acercaba rápidamente. Mientras caías, viste a Gardiner mirándote desde arriba, con una sonrisa siniestra en su rostro. Finalmente, sentiste el impacto contra el suelo con un fuerte golpe y todo se volvió oscuro.)" << endl;
+            if (vidasContrincante <= 0)
+            {
+                cout << R"(En un momento de desesperación, te aferraste a la ventana y empujaste a Gardiner con todas tus fuerzas, sintiendo cómo se soltaba de tus manos y caía hacia el suelo de abajo. Te quedaste allí mirando hacia abajo mientras el cuerpo de Gardiner, o lo que quedaba de el, se estrellaba contra el pavimento con un ruido sordo y seco.)" << endl;
+            }
+            else if (vidasPersonaje <= 0)
+            {
+                cout << R"(En un momento de desesperación, intentaste aferrarte a la ventana para evitar la caída, pero Gardiner te empujó con todas sus fuerzas. Te sentiste caer por el aire, sin control sobre tu cuerpo, y con la sensación de que la muerte se acercaba rápidamente. Mientras caías, viste a Gardiner mirándote desde arriba, con una sonrisa siniestra en su rostro. Finalmente, sentiste el impacto contra el suelo con un fuerte golpe y todo se volvió oscuro.)" << endl;
+            }
         }
 
         cout << "\nFin de la aventura conversacional" << endl;
