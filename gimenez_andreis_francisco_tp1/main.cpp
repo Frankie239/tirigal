@@ -1,5 +1,6 @@
+// Gimenez Andreis Francisco
 #include <iostream>
-#include <random>
+#include <random> 
 using namespace std;
 
 int main()
@@ -378,30 +379,29 @@ Sentiste algo siniestro agitándose dentro de ti. La daga parecía estar teniend
             cout << "\nPresiona enter para continuar..." << endl;
             cin.ignore().get();
         }
-
-        system("clear");
-        cout << R"(Gardiner te empujó hacia el marco de la ventana, su fuerza sorprendente para alguien de su edad. Lucharon cuerpo a cuerpo, forcejeando por el control mientras esquivaban los muebles y objetos de la habitación.
+    }
+    system("clear");
+    cout << R"(Gardiner te empujó hacia el marco de la ventana, su fuerza sorprendente para alguien de su edad. Lucharon cuerpo a cuerpo, forcejeando por el control mientras esquivaban los muebles y objetos de la habitación.
 
 Finalmente, con un rápido movimiento, lograste empujar a Gardiner hacia atrás, justo en el borde del marco de la ventana. Aún luchando, ambos perdieron el equilibrio y cayeron por la abertura, agarrándose desesperadamente el uno al otro.
 )" << endl;
-        cout << "presiona enter para continar" << endl;
-        cin.ignore().get();
+    cout << "presiona enter para continar" << endl;
+    cin.ignore().get();
 
-        if (vidasContrincante <= 0 || vidasPersonaje <= 0)
+    if (vidasContrincante <= 0 || vidasPersonaje <= 0)
+    {
+        if (vidasContrincante <= 0)
         {
-            if (vidasContrincante <= 0)
-            {
-                cout << R"(En un momento de desesperación, te aferraste a la ventana y empujaste a Gardiner con todas tus fuerzas, sintiendo cómo se soltaba de tus manos y caía hacia el suelo de abajo. Te quedaste allí mirando hacia abajo mientras el cuerpo de Gardiner, o lo que quedaba de el, se estrellaba contra el pavimento con un ruido sordo y seco.)" << endl;
-            }
-            else if (vidasPersonaje <= 0)
-            {
-                cout << R"(En un momento de desesperación, intentaste aferrarte a la ventana para evitar la caída, pero Gardiner te empujó con todas sus fuerzas. Te sentiste caer por el aire, sin control sobre tu cuerpo, y con la sensación de que la muerte se acercaba rápidamente. Mientras caías, viste a Gardiner mirándote desde arriba, con una sonrisa siniestra en su rostro. Finalmente, sentiste el impacto contra el suelo con un fuerte golpe y todo se volvió oscuro.)" << endl;
-            }
+            cout << R"(En un momento de desesperación, te aferraste a la ventana y empujaste a Gardiner con todas tus fuerzas, sintiendo cómo se soltaba de tus manos y caía hacia el suelo de abajo. Te quedaste allí mirando hacia abajo mientras el cuerpo de Gardiner, o lo que quedaba de el, se estrellaba contra el pavimento con un ruido sordo y seco.)" << endl;
         }
-
-        cout << "\nFin de la aventura conversacional" << endl;
-        cin.ignore().get();
+        else if (vidasPersonaje <= 0)
+        {
+            cout << R"(En un momento de desesperación, intentaste aferrarte a la ventana para evitar la caída, pero Gardiner te empujó con todas sus fuerzas. Te sentiste caer por el aire, sin control sobre tu cuerpo, y con la sensación de que la muerte se acercaba rápidamente. Mientras caías, viste a Gardiner mirándote desde arriba, con una sonrisa siniestra en su rostro. Finalmente, sentiste el impacto contra el suelo con un fuerte golpe y todo se volvió oscuro.)" << endl;
+        }
     }
+
+    cout << "\nFin de la aventura conversacional" << endl;
+    cin.ignore().get();
 
     return 0;
 }
